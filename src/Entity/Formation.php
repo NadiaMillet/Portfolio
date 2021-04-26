@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ParcoursRepository;
+use App\Repository\FormationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ParcoursRepository::class)
+ * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
-class Parcours
+class Formation
 {
     /**
      * @ORM\Id
@@ -23,9 +23,9 @@ class Parcours
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $descprition;
+    private $description;
 
     public function getId(): ?int
     {
@@ -44,14 +44,23 @@ class Parcours
         return $this;
     }
 
-    public function getDescprition(): ?string
+
+    /**
+     * Get the value of description
+     */
+    public function getDescription()
     {
-        return $this->descprition;
+        return $this->description;
     }
 
-    public function setDescprition(string $descprition): self
+    /**
+     * Set the value of description
+     *
+     * @return  self
+     */
+    public function setDescription($description)
     {
-        $this->descprition = $descprition;
+        $this->description = $description;
 
         return $this;
     }

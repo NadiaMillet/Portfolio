@@ -2,15 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Formation;
 use App\Entity\Profil;
+use App\Form\FormationType;
 use App\Form\ProfilType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Length;
 
 class MainController extends AbstractController
 {
+    /////////////////////// VUE DE LA PAGE INDEX ONEPAGE ////////////////////////////////////
     /**
      * @Route("", name="home")
      */
@@ -19,25 +23,32 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig');
     }
 
-    ////////////////////////////////////// AFFICHER LE PROFIL /////////////////////////////////
+    ////////////////////////////////////// AFFICHER SECTION PROFIL /////////////////////////////////
 
     /**
      * @Route("", name="home" )
      */
-    public function show(Request $request)
+    public function showprofil(Request $request)
     {
         $repository = $this->getDoctrine()->getRepository(Profil::class);
         $profils = $repository->findAll();
         return $this->render('main/index.html.twig', ['profils' => $profils]);
     }
 
-
+    ////////////////////// ACCUEIL ADMIN /////////////////////
+    /**
+     * @Route("admin", name="admin_home")
+     */
+    public function admin(): Response
+    {
+        return $this->render('admin/adminbord.html.twig');
+    }
 
     ///////////////////// AJOUT PROFIL ///////////////////////
     /**
-     * @Route("admin/newprofil", name="admin_bord")
+     * @Route("admin/newprofil", name="new_profil")
      */
-    public function new(Request $request)
+    public function newprofil(Request $request)
     {
         $repository = $this->getDoctrine()->getRepository(Profil::class);
         $profils = $repository->findAll();
@@ -48,31 +59,27 @@ class MainController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            ////////////////////////////// TEST 2 UPLOAD IMAGE YOUTUBE ROAD TO DEV //////////////////
             $file = $profil->getImg();
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('images_directory'), $fileName);
             $profil->setImg($fileName);
 
-            // va recup la class dictrine -> va recuperer la class manager de données
             $em = $this->getDoctrine()->getManager();
-            // em = objet intancier de la class manager (entity manager)
-            // persist() = Cette méthode signale à Doctrine que l'objet doit être enregistré. Elle ne doit être utilisée que pour un nouvel objet et non pas pour une mise à jour.alors jutilise la methode persistante=persist pour rendre ($eleve) persistant 
             $em->persist($profil);
-            // flush() = éxécute le SQL dans la base.
+
             $em->flush();
         }
 
-        return $this->render('/admin/newprofil.html.twig', ['formProfil' => $form->createView(), 'profils' => $profils]);
+        return $this->render('/admin/profil/newprofil.html.twig', ['formProfil' => $form->createView(), 'profils' => $profils]);
     }
 
-    ///////////////////////////////// MODIFIER LE PROFIL ///////////////////
+    ///////////////////////////////// MODIFIER LE PROFIL ///////////////////////////////////////////////
     /**
-     * @Route("/admin/editprofil/{id<\d+>}", name="edit")
+     * @Route("/admin/editprofil/{id<\d+>}", name="edit_profil")
      */
-    public function edit(Request $request, Profil $profil)
+    public function editprofil(Request $request, Profil $profil)
     {
-        $form = $this->createForm(ProduitType::class, $profil);
+        $form = $this->createForm(ProfilType::class, $profil);
 
         $form->handleRequest($request);
 
@@ -89,21 +96,116 @@ class MainController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
         }
 
-        return $this->render('/admin/editprofil.html.twig', ['formulaire' => $form->createView()]);
+        return $this->render('/admin/profil/editprofil.html.twig', ['formulaire' => $form->createView()]);
     }
 
     ////////////////////////////////////// AFFICHER LE PROFIL DANS L'ESPACE ADMIN /////////////////////////////////
 
     /**
-     * @Route("/admin/bord", name="admin_bord" )
+     * @Route("/admin/showprofil", name="show_profil" )
      */
-    // public function liste(Request $request)
-    // {
+    public function listeprofil(Request $request)
+    {
 
-    //     $repository = $this->getDoctrine()->getRepository(Profil::class);
+        $repository = $this->getDoctrine()->getRepository(Profil::class);
 
-    //     $profils = $repository->findAll();
+        $profils = $repository->findAll();
 
-    //     return $this->render('admin/bord.html.twig', ['profils' => $profils]);
-    // }
+        return $this->render('admin/profil/showprofil.html.twig', ['profils' => $profils]);
+    }
+
+
+    ////////////////////////////////////// FORMATION ////////////////////////////
+
+    /**
+     * @Route("", name="home" )
+     */
+    public function showformation(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(Profil::class);
+        $profils = $repository->findAll();
+        $profil = new Profil();
+        $form = $this->createForm(ProfilType::class, $profil);
+
+        for ($i = 0; $i < 7; $i++) {
+            $data["formations"][] = new Formation();
+        }
+        $repository = $this->getDoctrine()->getRepository(Formation::class);
+        $formations = $repository->findAll();
+        return $this->render('main/index.html.twig', ['formations' => $formations, 'profils' => $profils]);
+    }
+
+    /******** ADMIN *******/
+
+    /**
+     * @Route("/admin/showformation", name="show_formation")
+     */
+    public function listeformation(Request $request)
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Formation::class);
+
+        $formations = $repository->findAll();
+
+        return $this->render('admin/formation/showformation.html.twig', ['formations' => $formations]);
+    }
+
+    ///////////////////// AJOUT FORMATION ///////////////////////
+    /**
+     * @Route("admin/newformation", name="new_formation")
+     */
+    public function newformation(Request $request)
+    {
+        $repository = $this->getDoctrine()->getRepository(Formation::class);
+        $formations = $repository->findAll();
+        $formation = new formation();
+        $form = $this->createForm(FormationType::class, $formation);
+
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($formation);
+
+            $em->flush();
+        }
+
+        return $this->render('/admin/formation/newformation.html.twig', ['formFormation' => $form->createView(), 'formations' => $formations]);
+    }
+
+    ///////////////////////////////// MODIFIER LE PROFIL ///////////////////////////////////////////////
+    /**
+     * @Route("/admin/editformation/{id<\d+>}", name="edit_formation")
+     */
+    public function editformation(Request $request, Formation $formation)
+    {
+        $form = $this->createForm(FormationType::class, $formation);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $this->getDoctrine()->getManager()->flush();
+        }
+
+        return $this->render('/admin/formation/editformation.html.twig', ['formFormation' => $form->createView()]);
+    }
+
+    //////////////////////////////// SUPPRIMER UNE FORMATION ///////////////////////
+
+    /**
+     * @Route("/admin/deleteformation/{id<\d+>}", name="delete_formation")
+     */
+    public function delete(Request $request, Formation $formation)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($formation);
+        $em->flush();
+
+        // redirige la page
+        return $this->redirectToRoute("show_formation");
+    }
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keyword" content="portfolio, web, developper, developpeuse, techforgood, html, js, javascript, jquery, bootstrap, css, php, symfony, responsive, nadia, millet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>
+			{% block title %}
+				Nadia Millet - Développement Web & Marketing Digital !
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<!-- google font -->
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link
+			href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+			<!-- Boxicons -->
+			<link
+			href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+			<!-- bootstrap -->
+			<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+			<!-- AOS Animation -->
+			<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+			<!-- css -->
+			<link href="{{asset('/css/style.css') }}" rel="stylesheet">
+		{% endblock %}
+
+
+		{% block javascripts %}
+			<!-- Jquery - Typed -->
+			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+			<!-- Bootstrap -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+			<!-- AOS Animation -->
+			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+			<!-- dossier js -->
+			<script src="{{asset('/js/scripts.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body id="body-pd">
+		{% block navbar %}
+
+			<!-- HEADER -->
+			<header class="header" id="header">
+				<div class="header__toggle">
+					<i class='bx bx-menu' id="header-toggle"></i>
+				</div>
+
+				<div class="header__img">
+					<img src="assets/img/perfil.jpg" alt="">
+				</div>
+			</header>
+			<!-- NAVBAR SIDEBAR -->
+			<div class="l-navbar" id="nav-bar">
+				<nav class="nav">
+					<div>
+						<a href="#" class="nav__logo">
+							<i class='bx bx-layer nav__logo-icon'></i>
+							<span class="nav__logo-name">Bedimcode</span>
+						</a>
+
+						<div class="nav__list">
+							<a href="#" class="nav__link active">
+								<i class='bx bx-home-alt nav__icon'></i>
+								<span class="nav__name">Home</span>
+							</a>
+
+							<a href="#profil" class="nav__link">
+								<i class='bx bx-smile nav__icon'></i>
+								<span class="nav__name">Profil</span>
+							</a>
+
+							<a href="#parcours" class="nav__link">
+								<i class='bx bx-briefcase nav__icon'></i>
+								<span class="nav__name">Parcours</span>
+							</a>
+
+							<a href="#contact" class="nav__link">
+								<i class='bx bx-user-plus  bx-tada bx-rotate-270 nav__icon'></i>
+								<span class="nav__name">Contact</span>
+							</a>
+
+							{# <a href="#" class="nav__link">
+																																																																																																										<i class='bx bx-folder nav__icon'></i>
+																																																																																																										<span class="nav__name">Data</span>
+																																																																																																									</a>
+																																																																																																		
+																																																																																																									<a href="#" class="nav__link">
+																																																																																																										<i class='bx bx-bar-chart-alt-2 nav__icon'></i>
+																																																																																																										<span class="nav__name">Analytics</span>
+																																																																																																									</a> #}
+							{% if is_granted('ROLE_ADMIN') %}
+
+								<a href="{{ path('admin_home')}}" class="nav__link">
+									<i class='bx bx-cog nav__icon'></i>
+									<span class="nav__name">Analytics</span>
+								</a>
+							{% endif %}
+						</div>
+					</div>
+
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{path("app_logout")}}" class="nav__link">
+							<i class='bx bx-log-out nav__icon'></i>
+							<span class="nav__name">Déconnexion</span>
+						</a>
+					{% else %}
+						<a href="{{path("app_login")}}" class="nav__link">
+							<i class='bx bx-log-in nav__icon'></i>
+							<span class="nav__name">Connexion</span>
+						</a>
+					{% endif %}
+				</nav>
+			</div>
+
+		{% endblock %}
+	</body>
+</html>

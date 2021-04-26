@@ -18,7 +18,7 @@ class Profil
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $text;
 
@@ -35,18 +35,6 @@ class Profil
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getText(): ?string
-    {
-        return $this->text;
-    }
-
-    public function setText(string $text): self
-    {
-        $this->text = $text;
-
-        return $this;
     }
 
     public function getImg()
@@ -69,6 +57,26 @@ class Profil
     public function setCv($cv)
     {
         $this->cv = $cv;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of text
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * Set the value of text
+     *
+     * @return  self
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
 
         return $this;
     }

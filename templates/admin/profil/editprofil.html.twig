@@ -1,0 +1,17 @@
+{% extends '/main/navfoot.html.twig' %}
+{% form_theme formulaire 'bootstrap_4_layout.html.twig' %}
+
+
+{% block navbar %}
+	<section id="body-pd">
+		{{parent()}}
+		<h3 class="text-center mt-5">
+			modigier mon profil</h3>
+		<div class="my-5">
+			{{ form(formulaire) }}
+				<button type="button" class="btn btn-secondary btn-block">
+					<a href="{{ path('show_profil')}}" class="text-white">Retour à la liste</a>
+				</button>
+			</div>
+		</section>
+	{% endblock %}

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Parcours;
+use App\Entity\Formation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Parcours|null find($id, $lockMode = null, $lockVersion = null)
- * @method Parcours|null findOneBy(array $criteria, array $orderBy = null)
- * @method Parcours[]    findAll()
- * @method Parcours[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Profil|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Profil|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Profil[]    findAll()
+ * @method Profil[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ParcoursRepository extends ServiceEntityRepository
+class FormationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Parcours::class);
+        parent::__construct($registry, Formation::class);
     }
 
     // /**
-    //  * @return Parcours[] Returns an array of Parcours objects
+    //  * @return Profil[] Returns an array of Profil objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ParcoursRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Parcours
+    public function findOneBySomeField($value): ?Profil
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

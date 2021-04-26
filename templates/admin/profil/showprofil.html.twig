@@ -1,0 +1,31 @@
+{% extends '/main/navfoot.html.twig' %}
+
+{% block navbar %}
+	{{parent()}}
+	<div class="container">
+
+		<div class="d-flex justify-content-center profil-nadia-millet-dev">
+			<div class="row">
+				<h3>Profil en ligne</h3>
+				{% for profil in profils %}
+
+					<button type="button" class="btn btn-outline-secondary mb-2">
+						<a href="{{ path('edit_profil', {'id': profil.id }) }}">Modifier</a>
+					</button>
+
+					<img src="{{asset('uploads/images/' ~ profil.img) }}" alt="photo de profil" class="col">
+
+					<div class="col">
+						<p>{{ profil.text | raw }}</p>
+					</div>
+
+					<button type="button" class="btn btn-outline-secondary mb-2">
+						<a href="{{ path('edit_profil', {'id': profil.id }) }}">Modifier</a>
+					</button>
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

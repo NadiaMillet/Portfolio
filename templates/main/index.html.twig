@@ -1,129 +1,224 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="keyword" content="portfolio, web, developper, developpeuse, techforgood, html, js, javascript, jquery, bootstrap, css, php, symfony, responsive, nadia, millet">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>
-			{% block title %}
-				Nadia Millet - Développement Web & Marketing !
-			{% endblock %}
-		</title>
-		{% block stylesheets %}
-			<!-- fontawsome-->
-			<link
-			rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"/>
-			<!-- google font -->
-			<link rel="preconnect" href="https://fonts.gstatic.com">
-			<link
-			href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-			<!-- semantic ui -->
-			<link
-			rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-			<!-- booystrap -->
-			<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+{% extends 'main/navfoot.html.twig' %}
 
-			<!-- css -->
-			<link href="{{asset('/css/theme.css') }}" rel="stylesheet">
-		{% endblock %}
-		{% block javascripts %}
-			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-			<!-- semantic ui -->
-			<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-			<!-- boot -->
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-			<!-- dossier js -->
-			<script src="{{asset('/js/scripts.js') }}"></script>
-		{% endblock %}
-	</head>
-	<body>
-
-		{% block body %}
-			<div class="ui top attached demo menu">
-				<a class="item bars" style="font-size: 2rem; border:none;">
-					<i class="sidebar icon"></i>
+{% block navbar %}
+	{{parent()}}
+	<!-- ACCUEIL -->
+	<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+		<div class="container accueil">
+			<div class="row">
+				<h1 class="text-center">Nadia Millet</h1>
+				<!--Animation typed JS-->
+				<div class="text-center my-5">
+					<h2 class="typetxt-js devweb marketing digital">
+						<span id="typetxt"></span>
+					</h2>&nbsp;
+				</div>
+			</div>
+		</div>
+		<!-- ICON CONTACT -->
+		<div class="container d-flex flex-row justify-content-evenly icon-contact-developpement-web">
+			<div class="row">
+				<a href="https://www.linkedin.com/in/nadia-millet-8278871b7/" target="_blank" class="col">
+					<i class='bx bxl-linkedin  bx-border-circle '></i>
+				</a>
+				<a href="mailto:nadiamillet.eb@gmail.com" class="col">
+					<i class='bx bx-mail-send  bx-border-circle '></i>
+				</a>
+				<a href="tel:+33610251164" class="col">
+					<i class='bx bx-phone  bx-border-circle '></i>
+				</a>
+				<a href="https://github.com/NadiaMillet" target="_blank" class="col">
+					<i class='bx bxl-github  bx-border-circle '></i>
+				</a>
+				<a href="https://app.assessfirst.com/_/profile/dvxqkec0-nadia-elakeb" target="_blank" class="col">
+					<i class='bx bx-brain  bx-border-circle '></i>
 				</a>
 			</div>
-			<div class="ui bottom attached segment">
-				<div class="ui inverted labeled icon left inline vertical demo sidebar menu">
-					<a class="item">
-						<i class="home icon"></i>
-						Home
-					</a>
-					<a class="item">
-						<i class="smile outline icon"></i>
-						Profil
-					</a>
-					<a class="item">
-						<i class="briefcase icon"></i>
-						Parcours
-					</a>
-					<a class="item">
-						<i class="block layout icon"></i>
-						Portfolio
-					</a>
-					<a class="item">
-						<i class="user plus icon"></i>
-						Contact
-					</a>
-				</div>
-				<div class="pusher">
-					<div class="ui basic segment">
-						<div class=" ui container centered grid entete">
-							<div class="ui sixteen wide column row">
-								<h1>Nadia Millet</h1>
-							</div>
-							<div class="ui sixteen wide column row">
-								<h2 class="typetxt-js devweb marketing digital">
-									<span id="typetxt"></span>
-								</h2>&nbsp;
-							</div>
-							<div class="sixteen column row icon-contact-developpement-web">
-								<div class="column">
-									<a href="https://www.linkedin.com/in/nadia-millet-8278871b7/" target="_blank">
-										<i class="linkedin icon"></i>
-									</a>
-								</div>
-								<div class="column">
-									<a href="mailto:nadiamillet.eb@gmail.com">
-										<i class="envelope icon"></i>
-									</a>
-								</div>
-								<div class="column">
-									<a href="tel:+33610251164">
-										<i class="phone icon"></i>
-									</a>
-								</div>
-								<div class="column">
-									<a href="https://github.com/NadiaMillet" target="_blank">
-										<i class="github icon"></i>
-									</a>
-								</div>
-								<div class="column">
-									<a href="https://app.assessfirst.com/_/profile/dvxqkec0-nadia-elakeb" target="_blank">
-										<i class="fas fa-user-cog"></i>
-									</a>
-								</div>
-							</div>
-						</div>
+		</div>
+	</div>
 
-						{% for profil in profils %}
-							<div class="ui container grid profil-nadia-millet">
-								<div class="eight wide column photoslide">
-									<img class="ui massive image" src="{{asset('uploads/images/' ~ profil.img) }}" alt="photo de profil">
-								</div>
-								<div class="eight wide column">
-									<p>{{profil.text | raw }}</p>
-								</div>
-							</div>
-						{% endfor %}
+	<!-- PROFIL dynamique edité depuis espace administration avec ckeditor-->
+	<div id="profil">
+		<div class="container my-5">
+			<div class="d-flex justify-content-center profil-nadia-millet-dev">
+				{% for profil in profils %}
+					<div class="row" data-aos="fade" data-aos-duration="2000">
+						<img src="{{asset('uploads/images/' ~ profil.img) }}" alt="photo de profil" class="col rounded-circle">
+
+						<div class="col" data-aos="fade" data-aos-duration="2000">
+							<p>{{ profil.text | raw }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!--SERVICES SECTION-->
+	<section class="services-dev-web-seo-reponsive col bg-light py-3" data-aos="zoom-in" data-aos-duration="1200">
+		<div class="container-fluid">
+			<h3 class="services__title mb-5 py-5 text-center">services</h3>
+			<div class="row services">
+				<div class="col-lg-4 mb-5 ">
+					<div class="text-center px-5">
+						<i class='bx bx-code-alt services__icon mb-3'></i>
+						<h4>Développement</h4>
+						<p>Création de site sur-mesure adapté à vos besoins avec les technologies Symfony, Javascript et Boostrap
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-5">
+					<div class="text-center px-5">
+						<i class='bx bxl-wordpress services__icon mb-3'></i>
+
+						<h4>Wordpress</h4>
+						<p>Création de site vitrine, blog et e-commerce avec Wordpress. Mise en place de fonctionnalité adaptée. Formation pour une gestion en toutes autonomie.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-5">
+					<div class="text-center px-5">
+						<i class='bx bx-devices services__icon mb-3'></i>
+						<h4>Responsive</h4>
+						<p>Site conçu de façon à ce qu'il s'adapte à toutes les résolutions d'écrans.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-5">
+					<div class="text-center px-5">
+						<i class='bx bx-line-chart services__icon mb-3'></i>
+						<h4>Stratégie Marketing</h4>
+						<p>Mise en place de solution web marketing, SEO, Newsletter, Google Analytics, Google Search Console, Google My Business...
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-5">
+					<div class="text-center px-5">
+						<i class='bx bxs-color-fill services__icon mb-3'></i>
+
+						<h4>Web Design</h4>
+						<p>Conception de charte graphique pour une interface simple, ergonomique et tendance.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-5">
+					<div class="text-center px-5">
+						<i class='bx bx-share-alt services__icon mb-3'></i>
+						<h4>Réseaux</h4>
+						<p>Mise en place de solution Social Media Marketing, liaison de votre site Wordpress à vos réseaux sociaux, Facebook Pixel, boutique Instagram...</p>
 					</div>
 				</div>
 			</div>
-		{% endblock %}
-	</body>
-</html>
+		</div>
+	</section>
+	<!--FORMATION SECTION-->
+	<section class="formation formation-developpeur-web" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 class="services__title mb-5 py-5 text-center">Formation</h3>
+
+				<div class="bgimg col-lg-6 col-sm-12 text-center">
+					<img class="img-fluid" src="{{asset('image/formation-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
+				</div>
+				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Cheffe de Projet Digital
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the first item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Titre RNCP Développement Web
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the second item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Baccalauréat ES
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the third item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--EXPERIENCE SECTION-->
+	<section class="formation formation-developpeur-web">
+		<div class="container-fluid">
+			<div class="row">
+				<h3 class="services__title mb-5 py-5 text-center">expérience</h3>
+				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Cheffe de Projet Digital
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the first item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Titre RNCP Développement Web
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the second item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Baccalauréat ES
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+							<div class="accordion-body">
+								<strong>This is the third item's accordion body.</strong>
+								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+								<code>.accordion-body</code>, though the transition does limit overflow.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bgimg col-lg-6 col-sm-12 text-center">
+					<img class="img-fluid" src="{{asset('image/experience-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

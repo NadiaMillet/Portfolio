@@ -1,0 +1,30 @@
+{% extends '/main/navfoot.html.twig' %}
+
+{% block navbar %}
+	{{parent()}}
+	<h3 class="text-center mt-5">
+		Hello Nadia !</h3>
+	<div class="border border-secondary p-5 mb-5 affichage-admin">
+		<p class="text-xl-center">
+			Bonjour Admin, accédez à vos éspaces directement depuis le liens ci-dessous !
+		</p>
+		<button type="button" class="btn btn-secondary btn-retour">
+			<a href="{{path("show_profil")}}" style="color:white;">Modifier ton profil</a>
+		</button>
+		{# <button type="button" class="btn btn-secondary btn-retour text-white">
+									<a href="{{path("edit_profil")}}" class="text-white">Modifier tes formations</a>
+								</button> #}
+
+		<button type="button" class="btn btn-secondary btn-retour text-white">
+			<a href="{{path("new_formation")}}" class="text-white">Ajouter une formation</a>
+		</button>
+		{# <button type="button" class="btn btn-secondary btn-retour text-white">
+							<a href="{{path("edit_formation")}}" class="text-white">Modifier tes formations</a>
+						</button> #}
+
+		<button type="button" class="btn btn-secondary btn-retour text-white">
+			<a href="#" class="text-white">Modifier ton epxérience</a>
+		</button>
+	</div>
+
+{% endblock %}
