@@ -1,0 +1,15 @@
+{% extends '/main/navfoot.html.twig' %}
+{% form_theme formRea 'bootstrap_4_layout.html.twig' %}
+
+{% block navbar %}
+	{{parent()}}
+
+	<h5 class="text-center mt-5">
+		ajout rea</h5>
+	<div class="container border border-secondary w-50 mt-5 p-5">
+		{{ form(formRea) }}
+			<button type="button" class="btn btn-secondary btn-block">
+				<a href="#" class="text-white">Retour à la liste</a>
+			</button>
+		</div>
+	{% endblock %}

@@ -110,7 +110,7 @@
 		</div>
 	</section>
 	<!--FORMATION SECTION-->
-	<section class="formation formation-developpeur-web" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
+	<section class="formation__section formation-developpeur-web" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
 		<div class="container-fluid">
 			<div class="row">
 				<h3 class="services__title mb-5 py-5 text-center">Formation</h3>
@@ -166,18 +166,18 @@
 		</div>
 	</section>
 	<!--EXPERIENCE SECTION-->
-	<section class="formation formation-developpeur-web">
+	<section class="experience__section experience-developpeur-web">
 		<div class="container-fluid">
 			<div class="row">
 				<h3 class="services__title mb-5 py-5 text-center">expérience</h3>
 				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
 					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingOne">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<h2 class="accordion-header" id="headingFour">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
 								Cheffe de Projet Digital
 							</button>
 						</h2>
-						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+						<div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
 							<div class="accordion-body">
 								<strong>This is the first item's accordion body.</strong>
 								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
@@ -186,12 +186,12 @@
 						</div>
 					</div>
 					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingTwo">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<h2 class="accordion-header" id="headingFive">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 								Titre RNCP Développement Web
 							</button>
 						</h2>
-						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+						<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
 							<div class="accordion-body">
 								<strong>This is the second item's accordion body.</strong>
 								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
@@ -200,12 +200,12 @@
 						</div>
 					</div>
 					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingThree">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<h2 class="accordion-header" id="headingSix">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
 								Baccalauréat ES
 							</button>
 						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+						<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
 							<div class="accordion-body">
 								<strong>This is the third item's accordion body.</strong>
 								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
@@ -214,11 +214,268 @@
 						</div>
 					</div>
 				</div>
-				<div class="bgimg col-lg-6 col-sm-12 text-center">
+				<div class=" col-lg-6 col-sm-12 text-center">
 					<img class="img-fluid" src="{{asset('image/experience-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
 				</div>
 			</div>
 		</div>
 	</section>
+	<!--PORTFOLIO SECTION-->
+	<section class="portfolio__section portfolio-dev-web-seo-reponsive col py-3" data-aos="zoom-in" data-aos-duration="1200">
+		<div class="container-fluid">
+			<h3 class="portfolio__title mb-5 py-5 text-center">portfolio</h3>
+			<div class="row">
+				<div
+					class="d-flex flex-row justify-content-evenly my-5 flex-wrap ">
+					<!--PROJET MODEST FASHION FRANCE-->
+					<div class="card col-lg-4 col-md-8 col-sm-12 col-xs-12 text-center m-2">
+						<img src="{{asset('/image/mff/mff-developpeur-web-nadia-millet.PNG') }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">MFF x KYV</h5>
+							<p class="card-text">Blog et E-commerce Mode</p>
+							<p class="card-text">Refonte visuelle et structurelle totale du site sous Wordpress
+								<br>
+								Web Marketing
+								<br>
+								Formation
+							</p>
+							<p>
+								<a href="https://modestfashionfrance.fr" target="_blank" class="col">
+									<i class='bx bx-link bx-border-circle'></i>
+								</a>
+							</p>
+						</div>
+						<button type="button" class="btn btn-outline-secondary d-grid gap-2 col-lg-6 mx-auto mb-2" data-bs-toggle="modal" data-bs-target="#modal__mff">
+							En savoir plus
+						</button>
+					</div>
 
+					<!--PROJET MARCI PIGNOT CHOCOLATERIE-->
+					<div class="card col-lg-4 col-md-8 col-sm-12 col-xs-12 text-center m-2">
+						<img src="{{asset('/image/mps/mps-developpeur-web-nadia-millet.PNG') }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Marc Pignot Saint-Sëans</h5>
+							<p class="card-text">Chocolaterie
+							</p>
+							<p class="card-text">Création from scratch du site vitrine en Symfony
+								<br>
+								Web Design
+								<br>
+								Espace administration
+							</p>
+							<p>
+								<a href="https://github.com/NadiaMillet/Soutenance" target="_blank" class="col">
+									<i class='bx bxl-github bx-border-circle'></i>
+								</a>
+							</p>
+						</div>
+						<button type="button" class="btn btn-outline-secondary d-grid gap-2 col-lg-6 col-sm-4 mx-auto mb-2" data-bs-toggle="modal" data-bs-target="#modal__mps">
+							En savoir plus
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section
+		class="modal__portfolio">
+
+		<!-- MODAL  MODEST FASHION FRANCE -->
+		<div class="modal fade" id="modal__mff" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable  modal-dialog-centered">
+				<div
+					class="modal-content">
+					<!-- En-tête modal-->
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">MFF x KYV</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<!--Contenu du modal-->
+					<div class="modal-body">
+						<div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="{{asset('/image/mff/tab-responsive-mff-developpeur-web-nadia-millet.png') }}" class="d-block w-100" alt="...">
+								</div>
+								<div class="carousel-item">
+									<img src="{{asset('/image/mff/ex.PNG') }}" class="d-block w-100" alt="...">
+								</div>
+								<div class="carousel-item">
+									<img src="{{asset('/image/mff/exe.PNG') }}" class="d-block w-100" alt="...">
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+						<!-- Texte -->
+						<h6>Refonte visuelle et structurelle totale - Wordpress</h6>
+						<p>
+							<ul>
+								<li>Réorganisation de l'arborescence du site & du parcours utilisateur</li>
+								<li>Mise en place d'un thème adapté aux services blog et e-commerce</li>
+								<li>Modification sur mesure du thème en CSS dans le respect de la charte graphique</li>
+							</ul>
+						</p>
+						<h6>Mise en place d'un stratégie web marketing</h6>
+						<p>
+							<ul>
+								<li class="modal__subli">Établissement du SEO</li>
+								<ul>
+									<li>Installation et paramétrage du plugin SEO</li>
+									<li>Passage à la premiere place dans les résultats de recherche - suivi des liens social media</li>
+									<li>Rédaction de contenus optimisés</li>
+								</ul>
+								<li class="modal__subli">Newsletter</li>
+								<ul>
+									<li>Mise en place des formulaires de Newsletter</li>
+									<li>Call to Action via une popup d'incitation d'inscprition à la newsletter</li>
+									<li>Paramétrage de la Newsletter - Mailchimp</li>
+									<li>Création d'un email de bienvenue automatique à l'inscription</li>
+								</ul>
+								<li class="modal__subli">Social Media</li>
+								<ul>
+									<li>SEO des liens vers les réseaux sociaux</li>
+									<li>Feed Twitter et Instagram automatique sur le site</li>
+									<li>Pixel Facebook</li>
+									<li>Boutique Facebook et Instagram</li>
+								</ul>
+								<li class="modal__subli">LiveChat</li>
+								<ul>
+									<li>Call to Action avec la mise en place d'un LiveChat et paramétrage</li>
+									<li>Automatisation des réponses</li>
+								</ul>
+							</ul>
+						</p>
+					</div>
+					<!-- Pied du modal - btn-->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- MODAL MARC PIGNOT SAINT SEANS -->
+		<div class="modal fade" id="modal__mps" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable  modal-dialog-centered">
+				<div
+					class="modal-content">
+					<!-- En-tête modal-->
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">MARC PIGNOT SAINT-SAËNS</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<!--Contenu du modal-->
+					<div
+						class="modal-body">
+						<!--Caroussel-->
+						<div id="carouselMps" class="carousel slide mb-5" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+								<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="{{asset('/image/mps/mps-developpeur-web-nadia-millet.png') }}" class="d-block w-100" alt="...">
+								</div>
+								<div class="carousel-item">
+									<img src="{{asset('/image/mps/responsive-mps-developpeur-web-nadia-millet.PNG') }}" class="d-block w-100" alt="...">
+								</div>
+								<div class="carousel-item">
+									<img src="{{asset('/image/mps/admin-mps-developpeur-web-nadia-millet.PNG') }}" class="d-block w-100" alt="...">
+								</div>
+								<!-- AJOUTER IMAGE FORMULAIRE DE CONNEXION-->
+								<!-- AJOUTER IMAGE FORMULAIRE DE CONTACT-->
+
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselMps" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselMps" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+						<!-- Texte -->
+						<h6>Création from scratch du futur site de la chocolaterie
+							<br>
+							Php - Symfony - Sql - Twig - Bootstrap - Css</h6>
+						<p>
+							<ul>
+								<li>Création en vu du remplacement du site actuel</li>
+								<li>Réorganisation de l'arborescence du site & du parcours utilisateu</li>
+								<li>Création de la charte graphique</li>
+								<li>Création d'un espace administrateur - Gestion des produits</li>
+								<li>Méthode Agile</li>
+							</ul>
+						</p>
+						<h6>Front-end</h6>
+						<p>
+							<ul>
+								<li class="modal__subli">Web Design</li>
+								<ul>
+									<li>Modernisation de l'image de marque</li>
+									<li>Création de la charte graphique</li>
+									<li>Définition de la palette de couleur & police d'écriture</li>
+									<li>Maquette et Wireframe</li>
+								</ul>
+								<li class="modal__subli">Intégration</li>
+								<ul>
+									<li>Bootstrap</li>
+									<li>CSS</li>
+									<li>Twig</li>
+									<li>Site entièrement responsive</li>
+									<li>Affichage dynamique des produits - Base de données</li>
+								</ul>
+							</ul>
+						</p>
+						<h6>Back-end</h6>
+						<p>
+							<ul>
+								<li class="modal__subli">Compte</li>
+								<ul>
+									<li>Création et connexion au compte</li>
+									<li>Détermniation des rôles (Administrateur ou utilisateur)</li>
+									<li>Sécurisation des mots de passe (hashage)</li>
+								</ul>
+								<li class="modal__subli">Espace Administrateur</li>
+								<ul>
+									<li>Création d'un espace administrateur sécurisé</li>
+									<li>Gestions des produits - Création - Modification - Suppression</li>
+									<li>Gestion de la "Selection du moment"</li>
+									<li>Menu navigation adapté</li>
+								</ul>
+								<li class="modal__subli">Contact</li>
+								<ul>
+									<li>Mise en place d'un formulaire de contact</li>
+								</ul>
+							</ul>
+						</p>
+						<p class="text-center">
+							<a href="https://github.com/NadiaMillet/Soutenance" target="_blank" class="text-center">
+								<i class='bx bxl-github bx-border-circle'></i>
+							</a>
+						</p>
+					</div>
+					<!-- Pied du modal - btn-->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</p>
+			</p>
+		</div>
+	</section>
 {% endblock %}

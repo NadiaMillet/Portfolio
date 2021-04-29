@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     let typed = new Typed("#typetxt", {
-        strings: ["Développement Web", " Marketing Digital"],
+        strings: ["Développement Web", "Marketing Digital"],
         typeSpeed: 50,
         backSpeed: 50,
         loop: true
@@ -22,7 +22,7 @@ $(document).ready(function () {
         if (toggle && nav && bodypd && headerpd) {
             toggle.addEventListener('click', () => {
                 // show navbar
-                nav.classList.toggle('show')
+                nav.classList.toggle('show_nav')
                 // change icon
                 toggle.classList.toggle('bx-x')
                 // add padding to body
@@ -46,6 +46,16 @@ $(document).ready(function () {
     }
     linkColor.forEach(l => l.addEventListener('click', colorLink))
 
+
+    // let details = document.querySelector("#modal-trigger")
+    // for (let bouton of details) {
+    //     bouton.addEventListener("click", function () {
+    //         document.querySelector("#modal-trigger button").href = '/${this.dataset.id}'
+
+    //         document.querySelector(".modal-content h5").innerText = '${this.dataset.titre}'
+
+    //     })
+    // }
 
 });
 

@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Formation;
+
 use App\Entity\Profil;
-use App\Form\FormationType;
 use App\Form\ProfilType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -112,100 +111,5 @@ class MainController extends AbstractController
         $profils = $repository->findAll();
 
         return $this->render('admin/profil/showprofil.html.twig', ['profils' => $profils]);
-    }
-
-
-    ////////////////////////////////////// FORMATION ////////////////////////////
-
-    /**
-     * @Route("", name="home" )
-     */
-    public function showformation(Request $request)
-    {
-        $repository = $this->getDoctrine()->getRepository(Profil::class);
-        $profils = $repository->findAll();
-        $profil = new Profil();
-        $form = $this->createForm(ProfilType::class, $profil);
-
-        for ($i = 0; $i < 7; $i++) {
-            $data["formations"][] = new Formation();
-        }
-        $repository = $this->getDoctrine()->getRepository(Formation::class);
-        $formations = $repository->findAll();
-        return $this->render('main/index.html.twig', ['formations' => $formations, 'profils' => $profils]);
-    }
-
-    /******** ADMIN *******/
-
-    /**
-     * @Route("/admin/showformation", name="show_formation")
-     */
-    public function listeformation(Request $request)
-    {
-
-        $repository = $this->getDoctrine()->getRepository(Formation::class);
-
-        $formations = $repository->findAll();
-
-        return $this->render('admin/formation/showformation.html.twig', ['formations' => $formations]);
-    }
-
-    ///////////////////// AJOUT FORMATION ///////////////////////
-    /**
-     * @Route("admin/newformation", name="new_formation")
-     */
-    public function newformation(Request $request)
-    {
-        $repository = $this->getDoctrine()->getRepository(Formation::class);
-        $formations = $repository->findAll();
-        $formation = new formation();
-        $form = $this->createForm(FormationType::class, $formation);
-
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($formation);
-
-            $em->flush();
-        }
-
-        return $this->render('/admin/formation/newformation.html.twig', ['formFormation' => $form->createView(), 'formations' => $formations]);
-    }
-
-    ///////////////////////////////// MODIFIER LE PROFIL ///////////////////////////////////////////////
-    /**
-     * @Route("/admin/editformation/{id<\d+>}", name="edit_formation")
-     */
-    public function editformation(Request $request, Formation $formation)
-    {
-        $form = $this->createForm(FormationType::class, $formation);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $this->getDoctrine()->getManager()->flush();
-        }
-
-        return $this->render('/admin/formation/editformation.html.twig', ['formFormation' => $form->createView()]);
-    }
-
-    //////////////////////////////// SUPPRIMER UNE FORMATION ///////////////////////
-
-    /**
-     * @Route("/admin/deleteformation/{id<\d+>}", name="delete_formation")
-     */
-    public function delete(Request $request, Formation $formation)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $em->remove($formation);
-        $em->flush();
-
-        // redirige la page
-        return $this->redirectToRoute("show_formation");
     }
 }

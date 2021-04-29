@@ -55,10 +55,6 @@
 				<div class="header__toggle">
 					<i class='bx bx-menu' id="header-toggle"></i>
 				</div>
-
-				<div class="header__img">
-					<img src="assets/img/perfil.jpg" alt="">
-				</div>
 			</header>
 			<!-- NAVBAR SIDEBAR -->
 			<div class="l-navbar" id="nav-bar">
@@ -91,14 +87,14 @@
 							</a>
 
 							{# <a href="#" class="nav__link">
-																																																																																																										<i class='bx bx-folder nav__icon'></i>
-																																																																																																										<span class="nav__name">Data</span>
-																																																																																																									</a>
-																																																																																																		
-																																																																																																									<a href="#" class="nav__link">
-																																																																																																										<i class='bx bx-bar-chart-alt-2 nav__icon'></i>
-																																																																																																										<span class="nav__name">Analytics</span>
-																																																																																																									</a> #}
+																																																																																																																																													<i class='bx bx-folder nav__icon'></i>
+																																																																																																																																													<span class="nav__name">Data</span>
+																																																																																																																																												</a>
+																																																																																																																																					
+																																																																																																																																												<a href="#" class="nav__link">
+																																																																																																																																													<i class='bx bx-bar-chart-alt-2 nav__icon'></i>
+																																																																																																																																													<span class="nav__name">Analytics</span>
+																																																																																																																																												</a> #}
 							{% if is_granted('ROLE_ADMIN') %}
 
 								<a href="{{ path('admin_home')}}" class="nav__link">
@@ -124,5 +120,6 @@
 			</div>
 
 		{% endblock %}
+		<script defer async data-chayall-account="v2:e76b5ee4-992a-49b3-8230-e3faa2256076" src="https://widgets.chayall.fr/js/chayall.js"></script>
 	</body>
 </html>

@@ -134,7 +134,7 @@
   }
   
   /*Show navbar movil*/
-  .show{
+.show_nav{
     left: 0;
   }
   
@@ -244,6 +244,65 @@ h2
   border-bottom-right-radius: 30px;
 }
 
+/*===== REALISATIONS SECTION =====*/
+.portfolio__section{
+  background-color: #ecebf0;
+}
+/*** titre ***/
+.portfolio__title{
+  font-family: var(--title-one-font);
+  text-transform: uppercase;
+  font-size: 40px;
+}
+/*** cards ***/
+.card-img-top{
+  margin-top: -60px;
+  padding: 10px;
+  border-radius: 25px;
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 150px !important;
+}
+.card-text{
+  font-size: small;
+}
+.btn {
+
+  color: var(--first-color);
+  background-color: var(--white-color);
+  border: 1px solid var(--first-color);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: 0rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 15px;
+}
+/*** modal ***/
+/* .modal-content {
+  color: white;
+
+  background-color: #ffffff2e;
+  border: none;
+
+}
+.fade {
+  background-color: #000000e3;
+} */
+h6{
+  color:  var(--first-color);
+  text-align: center;
+}
+.modal__subli{
+  color:var(--first-color-light); 
+}
+.modal-footer {
+
+  align-items: center;
+  justify-content: center;
+}
 /*===== MEDIA QUERIES =====*/
 @media (max-width: 385px) {
   h2{
@@ -251,7 +310,15 @@ h2
   }
   .services__title{
     font-size: 25px;
-}
+  }
+  .card-img-top{
+    margin-top: -40px;
+    padding: 8px;
+  }
+  .card {
+    margin-bottom: 110px !important;
+  }
+    
 }
 @media (max-width: 450px) {
   h2{
@@ -261,9 +328,9 @@ h2
     font-size: 1.1rem;
 
   }
-  .services__title{
+  .services__title, .portfolio__title{
     font-size: 30px;
-}
+  }
 }
 @media screen and (min-width: 768px){
   body{
@@ -291,7 +358,7 @@ h2
   }
   
   /*Show navbar desktop*/
-  .show{
+  .show_nav{
     width: calc(var(--nav-width) + 156px);
   }
   /*Add padding body desktop*/
