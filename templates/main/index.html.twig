@@ -3,58 +3,60 @@
 {% block navbar %}
 	{{parent()}}
 	<!-- ACCUEIL -->
-	<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-		<div class="container accueil">
-			<div class="row">
-				<h1 class="text-center">Nadia Millet</h1>
-				<!--Animation typed JS-->
-				<div class="text-center my-5">
-					<h2 class="typetxt-js devweb marketing digital">
-						<span id="typetxt"></span>
-					</h2>&nbsp;
+	<section class="accueil__section">
+		<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+			<div class="container accueil">
+				<div class="row">
+					<h1 class="text-center">Nadia Millet</h1>
+					<!--Animation typed JS-->
+					<div class="text-center my-5">
+						<h2 class="typetxt-js devweb marketing digital">
+							<span id="typetxt"></span>
+						</h2>&nbsp;
+					</div>
+				</div>
+			</div>
+			<!-- ICON CONTACT -->
+			<div class="container d-flex flex-row justify-content-evenly icon-contact-developpement-web">
+				<div class="row">
+					<a href="https://www.linkedin.com/in/nadia-millet-8278871b7/" target="_blank" class="col">
+						<i class='bx bxl-linkedin  bx-border-circle '></i>
+					</a>
+					<a href="mailto:nadiamillet.eb@gmail.com" class="col">
+						<i class='bx bx-mail-send  bx-border-circle '></i>
+					</a>
+					<a href="tel:+33610251164" class="col">
+						<i class='bx bx-phone  bx-border-circle '></i>
+					</a>
+					<a href="https://github.com/NadiaMillet" target="_blank" class="col">
+						<i class='bx bxl-github  bx-border-circle '></i>
+					</a>
+					<a href="https://app.assessfirst.com/_/profile/dvxqkec0-nadia-elakeb" target="_blank" class="col">
+						<i class='bx bx-brain  bx-border-circle '></i>
+					</a>
 				</div>
 			</div>
 		</div>
-		<!-- ICON CONTACT -->
-		<div class="container d-flex flex-row justify-content-evenly icon-contact-developpement-web">
-			<div class="row">
-				<a href="https://www.linkedin.com/in/nadia-millet-8278871b7/" target="_blank" class="col">
-					<i class='bx bxl-linkedin  bx-border-circle '></i>
-				</a>
-				<a href="mailto:nadiamillet.eb@gmail.com" class="col">
-					<i class='bx bx-mail-send  bx-border-circle '></i>
-				</a>
-				<a href="tel:+33610251164" class="col">
-					<i class='bx bx-phone  bx-border-circle '></i>
-				</a>
-				<a href="https://github.com/NadiaMillet" target="_blank" class="col">
-					<i class='bx bxl-github  bx-border-circle '></i>
-				</a>
-				<a href="https://app.assessfirst.com/_/profile/dvxqkec0-nadia-elakeb" target="_blank" class="col">
-					<i class='bx bx-brain  bx-border-circle '></i>
-				</a>
-			</div>
-		</div>
-	</div>
-
+	</section>
 	<!-- PROFIL dynamique edité depuis espace administration avec ckeditor-->
-	<div id="profil">
+	<section class="profil__section" id="profil">
 		<div class="container my-5">
 			<div class="d-flex justify-content-center profil-nadia-millet-dev">
 				{% for profil in profils %}
 					<div class="row" data-aos="fade" data-aos-duration="2000">
-						<img src="{{asset('uploads/images/' ~ profil.img) }}" alt="photo de profil" class="col rounded-circle">
-
-						<div class="col" data-aos="fade" data-aos-duration="2000">
+						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-5">
+							<img src="{{asset('uploads/images/' ~ profil.img) }}" alt="photo de profil" class="img-fluid">
+						</div>
+						<div class="col mt-5 pt-5" data-aos="fade" data-aos-duration="2000">
 							<p>{{ profil.text | raw }}</p>
 						</div>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
-	</div>
+	</section>
 	<!--SERVICES SECTION-->
-	<section class="services-dev-web-seo-reponsive col bg-light py-3" data-aos="zoom-in" data-aos-duration="1200">
+	<section class="services__section services-dev-web-seo-reponsive col bg-light py-3" data-aos="zoom-in" data-aos-duration="1200">
 		<div class="container-fluid">
 			<h3 class="services__title mb-5 py-5 text-center">services</h3>
 			<div class="row services">
@@ -118,7 +120,7 @@
 				<div class="bgimg col-lg-6 col-sm-12 text-center">
 					<img class="img-fluid" src="{{asset('image/formation-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
 				</div>
-				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
+				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12 order-1" id="accordionExample">
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingOne">
 							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -136,14 +138,42 @@
 					<div class="accordion-item">
 						<h2 class="accordion-header" id="headingTwo">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Titre RNCP Développement Web
+								Titre Développement Web
 							</button>
 						</h2>
 						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
 							<div class="accordion-body">
-								<strong>This is the second item's accordion body.</strong>
-								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
+								<strong>Formation Développement Web & Web Mobile Fullstack - 2021</strong>
+								<ul>
+									<li class="modal__subli">Développement Front-End</li>
+									<ul>
+										<li>HTML5, CSS3</li>
+										<li>JavaScript</li>
+										<li>jQuery</li>
+										<li>Angular</li>
+										<li>Wordpress</li>
+										<li>Bootstrap</li>
+										<li>UX Design</li>
+										<li>SEO</li>
+									</ul>
+								</ul>
+								<ul>
+									<li class="modal__subli">Développement Back-End</li>
+									<ul>
+										<li>SQL</li>
+										<li>PHP OO</li>
+										<li>Symfony</li>
+										<li>Ajax</li>
+										<li>Wordpress Développement</li>
+									</ul>
+								</ul>
+								<ul>
+									<li class="modal__subli">Compétences Humaines</li>
+									<ul>
+										<li>Gestion de Projet</li>
+										<li>Méthodes Agiles</li>
+									</ul>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -155,9 +185,11 @@
 						</h2>
 						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
 							<div class="accordion-body">
-								<strong>This is the third item's accordion body.</strong>
-								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
+								<strong>Baccalauréat économique & social</strong>
+								<ul>
+									<li>Lycée Auguste Renoir</li>
+									<li>2014</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -166,79 +198,147 @@
 		</div>
 	</section>
 	<!--EXPERIENCE SECTION-->
-	<section class="experience__section experience-developpeur-web">
+	<section class="experience__section experience-developpeur-web" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
 		<div class="container-fluid">
 			<div class="row">
 				<h3 class="services__title mb-5 py-5 text-center">expérience</h3>
-				<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingFour">
-							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-								Cheffe de Projet Digital
-							</button>
-						</h2>
-						<div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
-							<div class="accordion-body">
-								<strong>This is the first item's accordion body.</strong>
-								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
+				<div class="d-flex flex-lg-row flex-md-column-reverse flex-sm-column-reverse">
+					<div class="accordion accordion-flush col-lg-6 col-md-12 col-sm-12 col-xs-12" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+									Cheffe de Projet Digital
+								</button>
+							</h2>
+							<div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+								<div class="accordion-body">
+									<strong>This is the first item's accordion body.</strong>
+									It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+									<code>.accordion-body</code>, though the transition does limit overflow.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFive">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+									Développeuse Web
+								</button>
+							</h2>
+							<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+								<div class="accordion-body">
+									<strong>Freelance</strong>
+									<ul>
+										<li class="modal__subli">Analyse technique</li>
+										<ul>
+											<li>Analyse des besoins / Faisabilité</li>
+											<li>Cahier des charges</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Développment</li>
+										<ul>
+											<li>Conception - Intégration - Refonte - Création Web</li>
+											<li>Vitrine - Ecommerce - Market Place</li>
+											<li>Programmation</li>
+											<li>Maintenance</li>
+											<li>Solutions et spécifités techniques</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Web Design</li>
+										<ul>
+											<li>Création charte graphique</li>
+											<li>Création visuel & Logo</li>
+											<li>Visuels Instagram</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Web Marketing</li>
+										<ul>
+											<li>Stratégies Personnalisées</li>
+											<li>Amélioration du SEO</li>
+											<li>Newsletter & Automatisation</li>
+											<li>Suivi Parcours client & SEM</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Formation</li>
+										<ul>
+											<li>Formation prise en main du site</li>
+											<li>Fiche explicative</li>
+										</ul>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingSix">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+									chargée de mission
+								</button>
+							</h2>
+							<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
+								<div class="accordion-body">
+									<strong>LogismartPro - 2018/2020</strong>
+									<ul>
+										<li class="modal__subli">Conception</li>
+										<ul>
+											<li>Appui à la création de l'entreprise</li>
+											<li>Développement du concept d'affaire</li>
+											<li>Élaboration du business plan</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Communication</li>
+										<ul>
+											<li>Participation à la rédaction du cahier des charges</li>
+											<li>Développement du site et de l'ERP en collaboration avec un webmaster</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Commercial</li>
+										<ul>
+											<li>Ciblage client & Arguments</li>
+											<li>Ciblage fournisseur & Arguments</li>
+										</ul>
+									</ul>
+									<ul>
+										<li class="modal__subli">Comptabilité</li>
+										<ul>
+											<li>Etablissement de devis, d'ordres de vente et d'ordres d'achat via l'ERP</li>
+											<li>Mise à jour des produits sur l’ERP</li>
+										</ul>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingFive">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-								Titre RNCP Développement Web
-							</button>
-						</h2>
-						<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
-							<div class="accordion-body">
-								<strong>This is the second item's accordion body.</strong>
-								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
-							</div>
-						</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 text-center">
+						<img class="img-fluid" src="{{asset('image/experience-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
 					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingSix">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-								Baccalauréat ES
-							</button>
-						</h2>
-						<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample" style="width:calc(var(--nav-width) + auto);">
-							<div class="accordion-body">
-								<strong>This is the third item's accordion body.</strong>
-								It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit overflow.
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class=" col-lg-6 col-sm-12 text-center">
-					<img class="img-fluid" src="{{asset('image/experience-developpeur-web-paris.png') }}" alt="illustration formation developpeur web">
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--PORTFOLIO SECTION-->
-	<section class="portfolio__section portfolio-dev-web-seo-reponsive col py-3" data-aos="zoom-in" data-aos-duration="1200">
+	<section class="portfolio__section portfolio-dev-web-seo-reponsive col py-3" data-aos="zoom-in" data-aos-duration="1500">
 		<div class="container-fluid">
 			<h3 class="portfolio__title mb-5 py-5 text-center">portfolio</h3>
 			<div class="row">
 				<div
-					class="d-flex flex-row justify-content-evenly my-5 flex-wrap ">
+					class="d-flex flex-row justify-content-evenly mt-5 flex-wrap ">
 					<!--PROJET MODEST FASHION FRANCE-->
 					<div class="card col-lg-4 col-md-8 col-sm-12 col-xs-12 text-center m-2">
 						<img src="{{asset('/image/mff/mff-developpeur-web-nadia-millet.PNG') }}" class="card-img-top" alt="...">
-						<div class="card-body">
+						<div class="card-body mt-5">
 							<h5 class="card-title">MFF x KYV</h5>
 							<p class="card-text">Blog et E-commerce Mode</p>
-							<p class="card-text">Refonte visuelle et structurelle totale du site sous Wordpress
-								<br>
-								Web Marketing
-								<br>
-								Formation
-							</p>
+							{# <p class="card-text">Refonte visuelle et structurelle totale du site sous Wordpress
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									<br>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									Web Marketing
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									<br>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									Formation
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</p> #}
 							<p>
 								<a href="https://modestfashionfrance.fr" target="_blank" class="col">
 									<i class='bx bx-link bx-border-circle'></i>
@@ -257,12 +357,12 @@
 							<h5 class="card-title">Marc Pignot Saint-Sëans</h5>
 							<p class="card-text">Chocolaterie
 							</p>
-							<p class="card-text">Création from scratch du site vitrine en Symfony
-								<br>
-								Web Design
-								<br>
-								Espace administration
-							</p>
+							{# <p class="card-text">Création from scratch du site vitrine en Symfony
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									<br>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									Web Design
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									<br>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									Espace administration
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</p> #}
 							<p>
 								<a href="https://github.com/NadiaMillet/Soutenance" target="_blank" class="col">
 									<i class='bx bxl-github bx-border-circle'></i>
@@ -277,9 +377,9 @@
 			</div>
 		</div>
 	</section>
+	<!--MODAL SECTION-->
 	<section
 		class="modal__portfolio">
-
 		<!-- MODAL  MODEST FASHION FRANCE -->
 		<div class="modal fade" id="modal__mff" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-scrollable  modal-dialog-centered">
@@ -365,7 +465,6 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- MODAL MARC PIGNOT SAINT SEANS -->
 		<div class="modal fade" id="modal__mps" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-scrollable  modal-dialog-centered">
@@ -478,4 +577,6 @@
 			</p>
 		</div>
 	</section>
+	<!--CONTACT SECTION-->
+
 {% endblock %}

@@ -86,15 +86,6 @@
 								<span class="nav__name">Contact</span>
 							</a>
 
-							{# <a href="#" class="nav__link">
-																																																																																																																																													<i class='bx bx-folder nav__icon'></i>
-																																																																																																																																													<span class="nav__name">Data</span>
-																																																																																																																																												</a>
-																																																																																																																																					
-																																																																																																																																												<a href="#" class="nav__link">
-																																																																																																																																													<i class='bx bx-bar-chart-alt-2 nav__icon'></i>
-																																																																																																																																													<span class="nav__name">Analytics</span>
-																																																																																																																																												</a> #}
 							{% if is_granted('ROLE_ADMIN') %}
 
 								<a href="{{ path('admin_home')}}" class="nav__link">

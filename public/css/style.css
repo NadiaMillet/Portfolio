@@ -159,8 +159,9 @@
 
 
   /*===== ACCUEIL =====*/
-.accueil{
-  margin-top: 100px;
+
+.accueil__section{
+  margin:180px 0px;
 }
 
 h1
@@ -244,7 +245,7 @@ h2
   border-bottom-right-radius: 30px;
 }
 
-/*===== REALISATIONS SECTION =====*/
+/*===== PORTFOLIO SECTION =====*/
 .portfolio__section{
   background-color: #ecebf0;
 }
@@ -263,7 +264,6 @@ h2
 .card {
   border: none;
   border-radius: 10px;
-  margin-bottom: 150px !important;
 }
 .card-text{
   font-size: small;
@@ -280,17 +280,6 @@ h2
   border-top-right-radius: 0;
   border-bottom-right-radius: 15px;
 }
-/*** modal ***/
-/* .modal-content {
-  color: white;
-
-  background-color: #ffffff2e;
-  border: none;
-
-}
-.fade {
-  background-color: #000000e3;
-} */
 h6{
   color:  var(--first-color);
   text-align: center;
@@ -321,6 +310,10 @@ h6{
     
 }
 @media (max-width: 450px) {
+  .accueil__section{
+    margin:100px 0px;
+  }
+  
   h2{
       font-size: 30px;
   }
@@ -331,6 +324,13 @@ h6{
   .services__title, .portfolio__title{
     font-size: 30px;
   }
+}
+@media (max-width: 992px) {
+.card {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 150px !important;
+}
 }
 @media screen and (min-width: 768px){
   body{
